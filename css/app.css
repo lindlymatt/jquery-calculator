@@ -51,9 +51,16 @@ body {
 }
 
 #equals {
-  position: relative;
-  min-height: 89px;
-  max-height: 89px;
+  position: absolute;
+  height: 89px;
+  bottom: 0;
+  left: 246px;
+}
+
+#equals:active {
+  background-color: #4AA3DF;
+  top: 185px;
+  box-shadow: inset 0px 1px 0px #5E626D, 0px 2px 0px 0px #45637F;
 }
 
 #buttons-container {
@@ -88,6 +95,11 @@ body {
   background-color: #4AA3DF;
   top: 3px;
   box-shadow: inset 0px 1px 0px #5E626D, 0px 2px 0px 0px #45637F;
+}
+
+#buttons-container {
+  position: relative;
+  /*margin-top: 25px;*/
 }
 
 .operator {
