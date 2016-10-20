@@ -10,6 +10,7 @@ $(function() {
   allSpans.on('click', function() {
     screenString += $(this).text();
     screen.text(screenString);
+    screenString = screenString.replace('x', '*').replace('÷', '/');
   });
 
   clearButton.on('click', function() {
@@ -19,19 +20,13 @@ $(function() {
 
   equalsButton.on('click', function() {
     try {
-      var evalValue = eval(screenString);
-
-      if(screenString.includes('x')) {
-        screenString = screenString.replace('x', '*');
-      }
-
-      screen.text(evalValue);
+      screen.text(eval(screenString));
       screenString = screen.text();
-
-    } catch (err) {
-      console.log('catch');
+    }
+    catch (err) {
       screen.text('ERROR!');
       screenString = '';
     }
+
   });
 });
